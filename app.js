@@ -3,6 +3,11 @@ const app = express();
 
 const connectDB = require("./db/connectDB");
 
+// routers
+const authRouter = require('./routes/auth');
+
+app.use('/api/v1/auth', authRouter);
+
 const port = process.env.PORT || 5000;
 
 const start = async () => {

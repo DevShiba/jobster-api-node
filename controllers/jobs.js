@@ -97,7 +97,7 @@ const deleteJob = async (req, res) => {
     params: { id: jobId },
   } = req;
 
-  const job = await Job.findByIdAndRemove({
+  const job = await Job.findByIdAndDelete({
     _id: jobId,
     createdBy: userId,
   });
@@ -129,7 +129,10 @@ const showStats = async (req, res) => {
     { $match: { createdBy: mongoose.Types.ObjectId(req.user.userId) } },
     {
       $group: {
-        _id: { year: { $year: "$createdAt" }, month: { $month: "$createdAt" } },
+        _id: {
+          year: { $year: { $toDate: "$createdAt" } },
+          month: { $month: { $toDate: "$createdAt" } },
+        },
         count: { $sum: 1 },
       },
     },

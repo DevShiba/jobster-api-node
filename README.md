@@ -69,21 +69,13 @@ To use the API, you need to:
     - **Update** an existing job entry: Use the updateJob function in the same file. This function takes a request object that includes the user's ID, the job ID, and the updated job details, and returns a response with the updated job.
     - **Delete** a job entry: Use the deleteJob function in the same file. This function takes a request object that includes the user's ID and the job ID, and deletes the specified job.
 
-
-
-
-
-
-
-
-
 ## API Documentation
 
 The API is documented using Swagger. You can access the interactive API documentation at:
 
 [API](https://jobster-api-node-j2gq.onrender.com)
 
-![Swagger UI]()
+![Swagger UI](https://i.imgur.com/JG6Dmjc.png)
 
 ## License
 
